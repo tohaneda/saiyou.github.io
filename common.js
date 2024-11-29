@@ -16,9 +16,9 @@ const url = "https://asuna4993.github.io/ASuna4993/index.html" + (paramsString ?
 shareButton.addEventListener('click', async () => {
     try {
         await navigator.share({
-            title: document.title,  // ページのタイトルを設定
-            text: text,             // HTML から取得したシェア用テキスト
-            url: url                // 現在のURLを取得
+            title: document.title,  // 1. タイトル
+            text: text,             // 2. 文言
+            url: url                // 3. リンク
         });
         console.log('シェア成功！');
     } catch (error) {
