@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html><head>
+    <title>応募フォーム　シェアー</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-size: 3rem;
+        }
+
+        p {
+            margin-bottom: 30px;
+        }
+        .share-text {
+            font-size: 3rem;
+        }
+
+        /* シェアボタンのスタイル */
+        .share-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 3rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .share-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* タップ時のハイライトを防ぐ */
+        .share-button:active {
+            background-color: #004085;
+        }
+    </style>    
+</head>
+<body class="">
+    <h1 class="share-title">採用紹介のしくみ</h1>
+    <div>
+        <div>
+            <h3>・直接紹介</h3>
+            <p class="share-text">1回10万円<br>
+            年間5回までであれば可能</p>
+            <h3>・間接紹介</h3>
+            <p class="share-text">年間5回までであれば可能。<br>
+            奨励金は社員への奨励金と同額</p>
+        </div>
+    </div>
+
+    <button id="webShareButton" class="share-button">
+        紹介者にシェアする
+    </button>
+
+
+<script src="share.js"></script>
+</body></html>
