@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html><head>
+    <title>応募フォーム　シェアー</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-size: 3rem;
+        }
+
+        p {
+            margin-bottom: 30px;
+        }
+        .share-text {
+            font-size: 3rem;
+        }
+
+        /* シェアボタンのスタイル */
+        .share-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 3rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .share-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* タップ時のハイライトを防ぐ */
+        .share-button:active {
+            background-color: #004085;
+        }
+    </style>    
+</head>
+<body class="">
+    <h1 class="share-title">社員紹介奨励金制度</h1>
+    <h2 class="share-title">ご紹介いただいた方が下記の職種に入社された場合、奨励金を支給します。</h2>
+
+    <div>
+        <div>
+            <p class="share-text">営業　100,000円<br></p>
+            <p class="share-text">建築・設計　100,000円<br></p>
+            <p class="share-text">仲介・管理　50,000円（パート採用の場合、30,000円）<br></p>
+            </br>
+        
+            <p class="share-text">※営業、建築・設計は、正社員採用のみ奨励金の支給対象となります。</p>
+            <p class="share-text">※入社から6ヵ月経過後、翌々月の給与にて奨励金を支給します。</p>
+        </div>
+    </div>
+
+    <button id="webShareButton" class="share-button">
+        紹介者にシェアする
+    </button>
+
+
+<script src="share.js"></script>
+</body></html>
