@@ -16,7 +16,7 @@ shareButtons.forEach(button => {
         const textContent = messageElement ? messageElement.textContent.trim() : '';
 
         const title = document.title; // ページのタイトル
-        const text = `${title}\n\n${textContent}`; // タイトルを文言に含める
+        const text = `【${title}】\n\n${textContent}`; // タイトルを文言に含める
 
         try {
             await navigator.share({
