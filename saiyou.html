@@ -34,23 +34,40 @@
         .share-button {
             padding: 15px;
             font-size: 2rem;
-            background-color: #007bff;
-            color: white;
+            color: white; /* 文字色は統一して白 */
             border: none;
             border-radius: 8px;
             cursor: pointer;
             margin-top: 20px;
-            margin-bottom: 10px; /* ボタン間の余白 */
+            margin-bottom: 10px;
             width: 80%; /* 幅を調整 */
             max-width: 70%; /* ボタンの最大幅を制限 */
+            transition: background-color 0.3s ease;
         }
 
         .share-button:hover {
-            background-color: #0056b3;
+            opacity: 0.8;
         }
 
         .share-button:active {
-            background-color: #004085;
+            opacity: 0.6;
+        }
+
+        /* 各ボタンの背景色 */
+        .share-button[data-pattern="friend"] {
+            background-color: #c9171e; /* 紅殻色 */
+        }
+
+        .share-button[data-pattern="acquaintance"] {
+            background-color: #ff6600; /* 濃い橙色 */
+        }
+
+        .share-button[data-pattern="relative"] {
+            background-color: #1560bd; /* デニム色 */
+        }
+
+        .share-button[data-pattern="stranger"] {
+            background-color: #4b4b4b; /* 濃い灰色 */
         }
 
         .button-container {
