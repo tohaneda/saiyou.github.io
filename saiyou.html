@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>社員応募のページを送るね</title>
-    <meta name="description" content="こんにちは！最近、うちの会社で新しいメンバーを募集してるんだけど、すごく働きやすい職場だから、もし興味があればチェックしてみて！😊 少しでも気になったら声かけてね。質問があればもちろん相談に乗るし、興味のある人がいたら教えてくれても嬉しい！✨ 😊 応募はこちらからできるよ👇">
+    <title>社員紹介奨励金制度</title>
+    <meta name="description" content="">
     <style>
         body {
             margin: 0;
@@ -17,6 +17,7 @@
             font-size: 4rem;
             margin-bottom: 20px;
         }
+
         h3 {
             font-size: 3rem;
         }
@@ -24,6 +25,7 @@
         p {
             margin-bottom: 30px;
         }
+
         .share-text {
             font-size: 3rem;
         }
@@ -49,7 +51,7 @@
         .share-button:active {
             background-color: #004085;
         }
-    </style>    
+    </style>
 </head>
 <body>
     <center><h1 class="share-title">社員紹介奨励金制度</h1></center>
@@ -67,16 +69,19 @@
         </div>
     </div>
 
-    <!-- シェアに使用するテキストをここに定義 -->
-    <div id="shareData" data-text="
-こんにちは！最近、うちの会社で新しいメンバーを募集してるんだけど、すごく働きやすい職場だから、もし興味があればチェックしてみて！😊
-少しでも気になったら声かけてね。質問があればもちろん相談に乗るし、興味のある人がいたら教えてくれても嬉しい！✨
-😊 応募はこちらからできるよ👇"></div>
+    <!-- シェア対象選択 -->
+    <label for="sharePattern">シェアの対象を選んでください:</label>
+    <select id="sharePattern">
+        <option value="friend">親しい友人に送る</option>
+        <option value="acquaintance">ちょっとした知り合いに送る</option>
+        <option value="relative">親戚などに送る</option>
+        <option value="stranger">それほど親しくない人に送る</option>
+    </select>
 
     <button id="webShareButton" class="share-button">
         紹介者にシェアする
     </button>
 
-<script src="common.js"></script>
+<script src="share.js"></script>
 </body>
 </html>
