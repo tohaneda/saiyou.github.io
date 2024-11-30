@@ -51,10 +51,10 @@ sendmail.jsの上部に、メール送信に関する設定がある。
 以下はsendmail.jsの設定例。
 
 // BCCメールアドレス
-const BBC_EMAIL = "atsushi_sunahara+bcc@token.co.jp";
+const BBC_EMAIL = "taro_token+bcc@token.co.jp";
 
 // 送信元メールアドレス
-const FROM_EMAIL = "test@token.co.jp";
+const FROM_EMAIL = "from@token.co.jp";
 
 // ファイル関連の定数
 const FILE_CONFIG = {
