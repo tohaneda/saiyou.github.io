@@ -34,7 +34,7 @@
         .share-button {
             width: 100%;
             padding: 15px;
-            font-size: 3rem;
+            font-size: 2rem;
             background-color: #007bff;
             color: white;
             border: none;
@@ -47,9 +47,14 @@
             background-color: #0056b3;
         }
 
-        /* タップ時のハイライトを防ぐ */
         .share-button:active {
             background-color: #004085;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
     </style>
 </head>
@@ -88,18 +93,13 @@
 応募フォームはこちらです👇</div>
     </div>
 
-    <!-- シェア対象選択 -->
-    <label for="sharePattern">シェアの対象を選んでください:</label>
-    <select id="sharePattern">
-        <option value="friend">親しい友人に送る</option>
-        <option value="acquaintance">ちょっとした知り合いに送る</option>
-        <option value="relative">親戚などに送る</option>
-        <option value="stranger">それほど親しくない人に送る</option>
-    </select>
-
-    <button id="webShareButton" class="share-button">
-        紹介者にシェアする
-    </button>
+    <!-- 各文言用のボタンを配置 -->
+    <div class="button-container">
+        <button class="share-button" data-pattern="friend">親しい友人に送る</button>
+        <button class="share-button" data-pattern="acquaintance">ちょっとした知り合いに送る</button>
+        <button class="share-button" data-pattern="relative">親戚などに送る</button>
+        <button class="share-button" data-pattern="stranger">それほど親しくない人に送る</button>
+    </div>
 
 <script src="share.js"></script>
 </body>
