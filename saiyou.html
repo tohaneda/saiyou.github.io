@@ -1,87 +1,42 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>社員紹介奨励金制度</title>
-    <meta name="description" content="">
-    <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-        h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-        }
-
-        h3 {
-            font-size: 3rem;
-        }
-
-        p {
-            margin-bottom: 30px;
-        }
-
-        .share-text {
-            font-size: 3rem;
-        }
-
-        /* シェアボタンのスタイル */
-        .share-button {
-            width: 100%;
-            padding: 15px;
-            font-size: 3rem;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        .share-button:hover {
-            background-color: #0056b3;
-        }
-
-        /* タップ時のハイライトを防ぐ */
-        .share-button:active {
-            background-color: #004085;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>リファラルメッセージ</title>
 </head>
 <body>
-    <center><h1 class="share-title">社員紹介奨励金制度</h1></center>
-    <h2 class="share-title">ご紹介いただいた方が下記の職種に入社された場合、奨励金を支給します。</h2>
-
-    <div>
-        <div>
-            <p class="share-text">営業　100,000円<br></p>
-            <p class="share-text">建築・設計　100,000円<br></p>
-            <p class="share-text">仲介・管理　50,000円（パート採用の場合、30,000円）<br></p>
-            </br>
-        
-            <p class="share-text">※営業、建築・設計は、正社員採用のみ奨励金の支給対象となります。</p>
-            <p class="share-text">※入社から6ヵ月経過後、翌々月の給与にて奨励金を支給します。</p>
-        </div>
+  <!-- 文言を保持するセクション -->
+  <div id="messages" style="display: none;">
+    <div id="friend">
+      こんにちは！最近、うちの会社で新しいメンバーを募集してるんだけど、すごく働きやすい職場だから、もし興味があればチェックしてみて！😊  
+      応募はこちらからできるよ👉<a href="[応募フォームリンク]">こちら</a>  
+      少しでも気になったら声かけてね。質問があればもちろん相談に乗るし、興味のある人がいたら教えてくれても嬉しい！✨
     </div>
+    <div id="acquaintance">
+      こんにちは！  
+      実は今、うちの会社で一緒に働いてくれる仲間を募集しているんです。とても良い環境なので、もしご興味があればぜひご覧ください！  
+      応募フォームはこちらです👉<a href="[応募フォームリンク]">こちら</a>  
+      ご不明点があればお気軽に連絡くださいね。😊
+    </div>
+    <div id="relative">
+      〇〇さん、こんにちは！  
+      お元気ですか？実は、私の会社で新しいスタッフを募集しているんです。雰囲気も良く、働きやすい職場なので、もし周りで興味がありそうな方がいればぜひご紹介いただけたら嬉しいです！  
+      こちらが応募フォームです👉<a href="[応募フォームリンク]">こちら</a>  
+      何か質問があればいつでも聞いてくださいね！
+    </div>
+    <div id="neutral">
+      はじめまして、突然のご連絡失礼いたします。  
+      実は、私が働いている会社で現在採用活動を行っており、もしご興味がございましたらぜひ応募をご検討いただければ幸いです。  
+      応募フォームはこちらです👉<a href="[応募フォームリンク]">こちら</a>  
+      ご不明点がございましたらお気軽にお知らせください。
+    </div>
+  </div>
 
-    <!-- シェア対象選択 -->
-    <label for="sharePattern">シェアの対象を選んでください:</label>
-    <select id="sharePattern">
-        <option value="friend">親しい友人に送る</option>
-        <option value="acquaintance">ちょっとした知り合いに送る</option>
-        <option value="relative">親戚などに送る</option>
-        <option value="stranger">それほど親しくない人に送る</option>
-    </select>
+  <!-- メッセージを動的に表示するエリア -->
+  <div id="output"></div>
 
-    <button id="webShareButton" class="share-button">
-        紹介者にシェアする
-    </button>
-
-<script src="common.js"></script>
+  <!-- JavaScriptの外部ファイル -->
+  <script src="script.js"></script>
 </body>
 </html>
