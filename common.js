@@ -1,26 +1,37 @@
-// ボタンの要素を取得
-const shareButton = document.getElementById('webShareButton');
+// メッセージを取得する関数
+function getMessage(type, link, name = "") {
+  const messages = document.getElementById("messages");
+  let message = messages.querySelector(`#${type}`).innerHTML;
 
-// シェア用テキストをHTMLから取得
-const shareDataElement = document.getElementById('shareData');
-const text = shareDataElement.getAttribute('data-text');
+  // リンクの置き換え
+  message = message.replace("[応募フォームリンク]", link);
 
-// URLパラメータを取得
-const urlParams = new URLSearchParams(window.location.search);
-const paramsString = urlParams.toString();
+  // 名前の置き換え（親戚向けなどに必要な場合）
+  if (name) {
+    message = message.replace("〇〇さん", `${name}さん`);
+  }
 
-// シェアするURLを生成
-const url = "https://asuna4993.github.io/ASuna4993/index.html" + (paramsString ? `?${paramsString}` : '');
+  return message;
+}
 
-// クリックイベントを設定
-shareButton.addEventListener('click', async () => {
-    try {
-        await navigator.share({
-            title: document.title + text,
-            url: url
-        });
-        console.log('シェア成功！');
-    } catch (error) {
-        console.error('シェア失敗', error);
-    }
-});
+// メッセージを表示する例
+window.onload = function () {
+  const output = document.getElementById("output");
+  const link = "https://example.com/apply";
+
+  // 1. 親しい友人に送るメッセージ
+  const friendMessage = getMessage("friend", link);
+  output.innerHTML += `<h3>親しい友人向け</h3><p>${friendMessage}</p>`;
+
+  // 2. ちょっとした知り合いに送るメッセージ
+  const acquaintanceMessage = getMessage("acquaintance", link);
+  output.innerHTML += `<h3>ちょっとした知り合い向け</h3><p>${acquaintanceMessage}</p>`;
+
+  // 3. 親戚に送るメッセージ（名前を指定）
+  const relativeMessage = getMessage("relative", link, "田中");
+  output.innerHTML += `<h3>親戚向け</h3><p>${relativeMessage}</p>`;
+
+  // 4. それほど親しくない人に送るメッセージ
+  const neutralMessage = getMessage("neutral", link);
+  output.innerHTML += `<h3>それほど親しくない人向け</h3><p>${neutralMessage}</p>`;
+};
