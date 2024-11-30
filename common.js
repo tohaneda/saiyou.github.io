@@ -17,8 +17,7 @@ shareButtons.forEach(button => {
 
         try {
             await navigator.share({
-                title: document.title,  // タイトル
-                text: text,             // ボタンに対応する文言
+                title: document.title + text,
                 url: url                // シェアURL
             });
             console.log(`シェア成功: ${pattern}`);
