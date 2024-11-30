@@ -13,12 +13,15 @@ shareButtons.forEach(button => {
     button.addEventListener('click', async () => {
         const pattern = button.getAttribute('data-pattern'); // ボタンのデータ属性からパターンを取得
         const messageElement = document.querySelector(`#shareMessages [data-pattern="${pattern}"]`);
-        const text = messageElement ? messageElement.textContent.trim() : '';
+        const textContent = messageElement ? messageElement.textContent.trim() : '';
+
+        const title = document.title; // ページのタイトル
+        const text = `${title}\n\n${textContent}`; // タイトルを文言に含める
 
         try {
             await navigator.share({
-                text: `${document.title}\n${text}`,
-                url: url
+                text: text,             // タイトルを含めた文言
+                url: url                // シェアURL
             });
             console.log(`シェア成功: ${pattern}`);
         } catch (error) {
@@ -26,3 +29,4 @@ shareButtons.forEach(button => {
         }
     });
 });
+
