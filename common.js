@@ -18,9 +18,8 @@ shareButton.addEventListener('click', async () => {
 
     try {
         await navigator.share({
-            title: document.title,  // タイトル
-            text: text,             // 選択された文言
-            url: url                // シェアURL
+            title: document.title + text,
+            url: url
         });
         console.log('シェア成功！');
     } catch (error) {
