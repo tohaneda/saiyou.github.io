@@ -32,7 +32,6 @@
 
         /* シェアボタンのスタイル */
         .share-button {
-            width: 100%;
             padding: 15px;
             font-size: 2rem;
             background-color: #007bff;
@@ -41,6 +40,9 @@
             border-radius: 8px;
             cursor: pointer;
             margin-top: 20px;
+            margin-bottom: 10px; /* ボタン間の余白 */
+            width: 80%; /* 幅を調整 */
+            max-width: 400px; /* ボタンの最大幅を制限 */
         }
 
         .share-button:hover {
@@ -54,7 +56,8 @@
         .button-container {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            align-items: center; /* ボタンを中央揃え */
+            gap: 10px; /* ボタン間の余白を明確にする */
         }
     </style>
 </head>
