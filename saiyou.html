@@ -53,6 +53,11 @@
         }
 
         /* 各ボタンの背景色 */
+
+        .share-button[data-pattern="friend"] {
+            background-color: #00c300; /* line色 */
+        }
+
         .share-button[data-pattern="friend"] {
             background-color: #c9171e; /* 紅殻色 */
         }
@@ -95,6 +100,8 @@
 
     <!-- 文言をHTML側で保持 -->
     <div id="shareMessages" style="display: none;">
+        <div data-pattern="line">
+        </div>
         <div data-pattern="friend">　
 こんにちは！最近、うちの会社で新しいメンバーを募集してるんだけど、すごく働きやすい職場だから、もし興味があればチェックしてみて！😊
 少しでも気になったら声かけてね。質問があればもちろん相談に乗るし、興味のある人がいたら教えてくれても嬉しい！✨
@@ -118,6 +125,7 @@
 
     <!-- 各文言用のボタンを配置 -->
     <div class="button-container">
+        <button class="share-button" data-pattern="line">linkだけ送る</button>
         <button class="share-button" data-pattern="friend">親しい友人に送る</button>
         <button class="share-button" data-pattern="acquaintance">ちょっとした知り合いに送る</button>
         <button class="share-button" data-pattern="relative">親戚などに送る</button>
