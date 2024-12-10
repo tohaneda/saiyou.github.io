@@ -3,43 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>リクルートページのリンクを送ります</title>
-    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             margin: 0;
             padding: 20px;
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.6;
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9; /* 背景色 */
+            background-color: #f9f9f9;
         }
 
         h1 {
-            font-size: 4rem;
+            font-size: 2.5rem;
             text-align: center;
             color: #333;
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 1.5rem;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             color: #555;
         }
 
         .job-table {
             width: 100%;
-            max-width: 600px;
-            margin: 0 auto 30px auto;
+            margin: 0 auto 20px auto;
             border-collapse: collapse;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .job-table th, .job-table td {
-            padding: 15px;
+            padding: 10px;
             border: 1px solid #ddd;
             text-align: left;
+            font-size: 0.9rem;
         }
 
         .job-table th {
@@ -53,19 +53,18 @@
 
         .note {
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 0.9rem;
             color: #666;
         }
 
         .share-button {
-            padding: 15px;
-            font-size: 1.2rem;
+            padding: 12px;
+            font-size: 1rem;
             color: white;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            margin-top: 20px;
-            width: 80%;
+            width: 100%;
             max-width: 300px;
             transition: background-color 0.3s ease;
         }
@@ -100,11 +99,37 @@
             align-items: center;
             gap: 10px;
         }
+
+        /* スマートフォン向けの調整 */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .job-table th, .job-table td {
+                padding: 8px;
+                font-size: 0.8rem;
+            }
+
+            .share-button {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
-    <center><h1 class="share-title">リファラル奨励金制度</h1></center>
-    <h2 class="share-title">ご紹介いただいた方が以下の職種に入社された場合、紹介者へ奨励金を支給します</h2>
+    <h1>リファラル奨励金制度</h1>
+    <h2>以下の職種に入社された場合、紹介者へ奨励金を支給します</h2>
 
     <table class="job-table">
         <thead>
@@ -132,10 +157,8 @@
     <p class="note">※仲介・管理のみパート採用の場合も奨励金が支給されます</p>
     <p class="note">※入社から6ヵ月経過後、翌々月の給与にて奨励金を支給します</p>
 
-    <!-- 文言をHTML側で保持 -->
     <div id="shareMessages" style="display: none;">
-        <div data-pattern="line">
-        </div>
+        <div data-pattern="line"></div>
         <div data-pattern="friend">　
 うちの会社で一緒に働かない？
 成長できる環境だし、風通しも良いからすごく働きやすいよ。
@@ -159,14 +182,11 @@
 </div>
     </div>
 
-    <!-- 各文言用のボタンを配置 -->
     <div class="button-container">
         <button class="share-button" data-pattern="line">リンクだけ送る</button>
         <button class="share-button" data-pattern="friend">親しい方に送る</button>
         <button class="share-button" data-pattern="relative">親戚などに送る</button>
         <button class="share-button" data-pattern="stranger">面識が少ない方へ送る</button>
     </div>
-
-    <script src="common.js"></script>
 </body>
 </html>
