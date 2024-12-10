@@ -99,10 +99,6 @@
             background-color: #c9171e;
         }
 
-        .share-button[data-pattern="acquaintance"] {
-            background-color: #ff6600;
-        }
-
         .share-button[data-pattern="relative"] {
             background-color: #1560bd;
         }
@@ -149,7 +145,6 @@
     <h1>リファラル奨励金制度</h1>
     <h2>ご紹介いただいた方が以下の職種に入社された場合、紹介者へ奨励金を支給します</h2>
 
-    <!-- 職種と金額リスト -->
     <div class="job-list">
         <div>
             <span>営業</span>
@@ -168,7 +163,6 @@
     <p class="note">※仲介・管理のみパート採用の場合も奨励金が支給されます</p>
     <p class="note">※入社から6ヵ月経過後、翌々月の給与にて奨励金を支給します</p>
 
-    <!-- メッセージをHTML側で保持 -->
     <div id="shareMessages" style="display: none;">
         <div data-pattern="line"></div>
         <div data-pattern="friend">
@@ -199,7 +193,6 @@
         </div>
     </div>
 
-    <!-- ボタン群 -->
     <div class="button-container">
         <button class="share-button" data-pattern="line">リンクだけ送る</button>
         <button class="share-button" data-pattern="friend">親しい方に送る</button>
@@ -207,20 +200,6 @@
         <button class="share-button" data-pattern="stranger">面識が少ない方へ送る</button>
     </div>
 
-    <!-- JavaScript -->
-    <script>
-        // シェアボタンのクリックで対応するメッセージを取得
-        document.querySelectorAll('.share-button').forEach(button => {
-            button.addEventListener('click', () => {
-                const pattern = button.getAttribute('data-pattern');
-                const messageElement = document.querySelector(`#shareMessages div[data-pattern="${pattern}"]`);
-                if (messageElement) {
-                    alert(messageElement.textContent.trim());
-                } else {
-                    alert("メッセージが見つかりません。");
-                }
-            });
-        });
-    </script>
+    <script src="common.js"></script>
 </body>
 </html>
