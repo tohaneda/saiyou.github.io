@@ -40,9 +40,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 0;
+            padding: 10px;
             font-size: 1.1rem;
             border-bottom: 1px solid #ddd;
+            min-height: 60px;
         }
 
         .job-list div:last-child {
@@ -51,6 +52,8 @@
 
         .job-list div span {
             flex: 1;
+            display: flex;
+            align-items: center;
         }
 
         .job-list div .amount {
@@ -96,6 +99,10 @@
             background-color: #c9171e;
         }
 
+        .share-button[data-pattern="acquaintance"] {
+            background-color: #ff6600;
+        }
+
         .share-button[data-pattern="relative"] {
             background-color: #1560bd;
         }
@@ -128,6 +135,7 @@
             .job-list div {
                 font-size: 1rem;
                 padding: 8px 0;
+                min-height: 50px;
             }
 
             .share-button {
@@ -141,6 +149,7 @@
     <h1>リファラル奨励金制度</h1>
     <h2>ご紹介いただいた方が以下の職種に入社された場合、紹介者へ奨励金を支給します</h2>
 
+    <!-- 職種と金額リスト -->
     <div class="job-list">
         <div>
             <span>営業</span>
@@ -159,6 +168,38 @@
     <p class="note">※仲介・管理のみパート採用の場合も奨励金が支給されます</p>
     <p class="note">※入社から6ヵ月経過後、翌々月の給与にて奨励金を支給します</p>
 
+    <!-- メッセージをHTML側で保持 -->
+    <div id="shareMessages" style="display: none;">
+        <div data-pattern="line"></div>
+        <div data-pattern="friend">
+            うちの会社で一緒に働かない？
+            成長できる環境だし、風通しも良いからすごく働きやすいよ。
+            営業部は入社前に体験入社の制度があるから安心だよ。
+            東建コーポレーションのリクルートページのリンクを送るね。
+            興味があれば相談に乗るから教えて！
+        </div>
+        <div data-pattern="acquaintance">
+            こんにちは！
+            実は今、うちの会社で一緒に働いてくれる仲間を募集しているんです。
+            とても良い環境なので、もしご興味があればぜひご覧ください！
+            ご不明点があればお気軽に連絡くださいね。
+        </div>
+        <div data-pattern="relative">
+            東建コーポレーションでは、共に働く社員を募集しています。
+            高収入やキャリアアップの実現と、充実したワークライフバランスの両立を目指してみませんか？
+            営業部は、実際の仕事内容を入社前に体験できる制度があり安心です。
+            東建コーポレーションのリクルートページのリンクを添付します。
+            ご興味をお持ちいただけましたら、お気軽にご相談ください
+        </div>
+        <div data-pattern="stranger">
+            現在、東建コーポレーションでは営業部で働く社員を募集しています。
+            高収入やキャリアアップの実現と、充実したワークライフバランスの両立が目指せる魅力的な会社です。
+            入社前に体験入社の制度を設けているため、安心してご応募いただけます。
+            以下のリンクに営業部の詳細が記載されています。ご興味があれば、ぜひお気軽にご相談ください。
+        </div>
+    </div>
+
+    <!-- ボタン群 -->
     <div class="button-container">
         <button class="share-button" data-pattern="line">リンクだけ送る</button>
         <button class="share-button" data-pattern="friend">親しい方に送る</button>
@@ -166,13 +207,18 @@
         <button class="share-button" data-pattern="stranger">面識が少ない方へ送る</button>
     </div>
 
+    <!-- JavaScript -->
     <script>
-        // リンクの動作を復元するスクリプト
+        // シェアボタンのクリックで対応するメッセージを取得
         document.querySelectorAll('.share-button').forEach(button => {
             button.addEventListener('click', () => {
                 const pattern = button.getAttribute('data-pattern');
-                const message = document.querySelector(`#shareMessages div[data-pattern="${pattern}"]`).innerText;
-                alert(message); // 動作確認用のアラート（必要なら変更）
+                const messageElement = document.querySelector(`#shareMessages div[data-pattern="${pattern}"]`);
+                if (messageElement) {
+                    alert(messageElement.textContent.trim());
+                } else {
+                    alert("メッセージが見つかりません。");
+                }
             });
         });
     </script>
