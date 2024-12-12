@@ -18,7 +18,7 @@ shareButtons.forEach(button => {
         const shareUrl = url; // シェアするURL
 
         // タイトルとURLを一体化
-        const text = `${title}\n\n${textContent}\n\n${shareUrl}`;
+        const text = `${textContent}\n\n${shareUrl}`;
 
         try {
             await navigator.share({
