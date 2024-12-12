@@ -3,7 +3,8 @@ const urlParams = new URLSearchParams(window.location.search);
 const paramsString = urlParams.toString();
 
 // シェアするURLを生成
-const url = "https://asuna4993.github.io/ASuna4993/index.html" + (paramsString ? `?${paramsString}` : '');
+//const url = "https://asuna4993.github.io/ASuna4993/index.html" + (paramsString ? `?${paramsString}` : '');
+const url = "https://185.homemate.jp/design_sample/invite/recruit2" + (paramsString ? `?${paramsString}` : '');
 
 // 全てのシェアボタンを取得
 const shareButtons = document.querySelectorAll('.share-button');
