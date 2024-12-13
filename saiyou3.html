@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>リクルートページのリンクを送ります</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #555;
+            text-align: left;
+        }
+
+        .job-list {
+            margin: 0 auto 20px auto;
+            max-width: 600px;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-list div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #ddd;
+            min-height: 60px;
+        }
+
+        .job-list div:last-child {
+            border-bottom: none;
+        }
+
+        .job-list div span {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .job-list div .amount {
+            flex: 0;
+            text-align: right;
+            white-space: nowrap;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        .note {
+            font-size: 1rem;
+            color: #666;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .share-button {
+            padding: 12px;
+            font-size: 1rem;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 300px;
+            transition: background-color 0.3s ease;
+        }
+
+        .share-button:hover {
+            opacity: 0.8;
+        }
+
+        .share-button:active {
+            opacity: 0.6;
+        }
+
+        .share-button[data-pattern="line"] {
+            background-color: #00c300;
+        }
+
+        .share-button[data-pattern="friend"] {
+            background-color: #c9171e;
+        }
+
+        .share-button[data-pattern="relative"] {
+            background-color: #1560bd;
+        }
+
+        .share-button[data-pattern="stranger"] {
+            background-color: #4b4b4b;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+                font-size: 16px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1rem;
+            }
+
+            .job-list div {
+                font-size: 1rem;
+                padding: 8px 0;
+                min-height: 50px;
+            }
+
+            .share-button {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>リファラル奨励金制度</h1>
+    <h2>ご紹介いただいた方が以下の職種に入社された場合、紹介者へ奨励金を支給します</h2>
+
+    <div class="job-list">
+        <div>
+            <span>営業</span>
+            <span class="amount">100,000円</span>
+        </div>
+        <div>
+            <span>建築・設計</span>
+            <span class="amount">100,000円</span>
+        </div>
+        <div>
+            <span>仲介・管理</span>
+            <span class="amount">50,000円<br>（パート採用の場合、30,000円）</span>
+        </div>
+    </div>
+
+    <p class="note">※仲介・管理のみパート採用の場合も奨励金が支給されます</p>
+    <p class="note">※入社から6ヵ月経過後、翌々月の給与にて奨励金を支給します</p>
+
+    <div id="shareMessages" style="display: none;">
+        <div data-pattern="line">リクルートページのリンクを送ります</div>
+        <div data-pattern="friend">
+            うちの会社で一緒に働かない？
+            成長できる環境だし、風通しも良いからすごく働きやすいよ。
+            営業部は入社前に体験入社の制度があるから安心だよ。
+            東建コーポレーションのリクルートページのリンクを送るね。
+            興味があれば相談に乗るから教えて！
+        </div>
+        <div data-pattern="acquaintance">
+            こんにちは！
+            実は今、うちの会社で一緒に働いてくれる仲間を募集しているんです。
+            とても良い環境なので、もしご興味があればぜひご覧ください！
+            ご不明点があればお気軽に連絡くださいね。
+        </div>
+        <div data-pattern="relative">
+            東建コーポレーションでは、共に働く社員を募集しています。
+            高収入やキャリアアップの実現と、充実したワークライフバランスの両立を目指してみませんか？
+            営業部は、実際の仕事内容を入社前に体験できる制度があり安心です。
+            東建コーポレーションのリクルートページのリンクを添付します。
+            ご興味をお持ちいただけましたら、お気軽にご相談ください
+        </div>
+        <div data-pattern="stranger">
+            現在、東建コーポレーションでは営業部で働く社員を募集しています。
+            高収入やキャリアアップの実現と、充実したワークライフバランスの両立が目指せる魅力的な会社です。
+            入社前に体験入社の制度を設けているため、安心してご応募いただけます。
+            以下のリンクに営業部の詳細が記載されています。ご興味があれば、ぜひお気軽にご相談ください。
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button class="share-button" data-pattern="line">リンクだけ送る</button>
+        <button class="share-button" data-pattern="friend">親しい方に送る</button>
+        <button class="share-button" data-pattern="relative">親戚などに送る</button>
+        <button class="share-button" data-pattern="stranger">面識が少ない方へ送る</button>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const paramsString = urlParams.toString();
+
+        const baseUrl = "https://185.homemate.jp/design_sample/invite/recruit2";
+        const shareUrl = baseUrl + (paramsString ? `?${paramsString}` : '');
+
+        const shareButtons = document.querySelectorAll('.share-button');
+
+        shareButtons.forEach(button => {
+            button.addEventListener('click', async () => {
+                const pattern = button.getAttribute('data-pattern');
+                const messageElement = document.querySelector(`#shareMessages [data-pattern="${pattern}"]`);
+                const textContent = messageElement ? messageElement.textContent.trim() : '';
+
+                const text = `${textContent}\n\n${shareUrl}`;
+
+                try {
+                    await navigator.share({
+                        text: text
+                    });
+                    console.log(`シェア成功: ${pattern}`);
+                } catch (error) {
+                    console.error(`シェア失敗 (${pattern}):`, error);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
